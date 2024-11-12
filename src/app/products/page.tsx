@@ -5,11 +5,11 @@ interface Props {
   searchParams: { title?: string }
 }
 
-const HomePage = async ({ searchParams }: Props) => {
+const Products = async ({ searchParams }: Props) => {
   const queryParams = await searchParams;
   const productService = new ProductService();
   const products = await productService.getProducts(queryParams);
-  
+
   return (
     <div className="container mx-auto p-4">
       <ProductList products={products} />
@@ -17,4 +17,4 @@ const HomePage = async ({ searchParams }: Props) => {
   );
 };
 
-export default HomePage;
+export default Products;
